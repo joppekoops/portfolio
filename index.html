@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Joppe Koops Webdesign Portfolio</title>
+	<link rel="stylesheet" href="./css/style.css">
+
+	<!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/aca5798640.js" crossorigin="anonymous"></script>
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100;0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+	<header>
+
+		<nav>
+			<ul>
+				<li><a href="#skills">Mijn Skills</a></li>
+				<li><a href="#projecten">Projecten</a></li>
+				<li><a href="#over-mij">Over Mij</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+
+	</header>
+
+	<main>
+
+		<section id="hero">
+			<canvas id="hero-canvas" title="Joppe aan het werk op zijn computer"></canvas>
+			<div class="hero-content">
+				<h1><span>Hi, Ik ben Joppe Koops</span> <span class="big">Webdeveloper</span> <span class="big">UX Designer</span> <span class="big">CMD Student</span></h1>
+				<p>Ik ontwerp toegankelijke en functionele websites.</p>
+			</div>
+		</section>
+
+		<section id="skills">
+			<h2>Mijn Skills</h2>
+			<div>
+				<div>
+					<img src="./img/html-scherm.png" alt="Een laptop met op het scherm HTML code">
+				</div>
+				<div>
+					<span><i class="fa-brands fa-html5"></i>HTML</span>
+					<progress value="80" min="0" max="100" title="html 80%"></progress>
+					<span><i class="fa-brands fa-css3-alt"></i>CSS</span>
+					<progress value="80" min="0" max="100" title="css 80%"></progress>
+					<span><i class="fa-brands fa-js-square"></i>JavaScript</span>
+					<progress value="45" min="0" max="100" title="javascript 45%"></progress>
+					<span><i class="fa-brands fa-php"></i>PHP</span>
+					<progress value="60" min="0" max="100" title="php 60%"></progress>
+					<img src="./img/xd-logo.svg" alt="Adobe XD logo" class="logo">
+					<img src="./img/figma-logo.svg" alt="Figma logo" class="logo">
+				</div>
+			</div>
+		</section>
+
+		<section id="projecten">
+			
+			<h2>Projecten</h2>
+			
+			<article id="ikea-herontwerp" aria-label="ikea herontwerp">
+				<div>
+					<h3>Ikea Herontwerp</h3>
+					<i class="fa-brands fa-html5"></i>
+					<i class="fa-brands fa-css3-alt"></i>
+					<i class="fa-brands fa-js-square"></i>
+					<p class="big">Webdesign met focus op screenreader toegankelijkheid.</p>
+					<p class="big">+ Leuke easteregg met javascript.</p>
+					<a href="https://jkhvacmd209.github.io/frontend-development/planten.html" >Bekijk de website <i class="fa-solid fa-circle-arrow-right"></i><small>best op mobiel</small></a>
+					<a href="https://github.com/jkhvacmd209/frontend-development">Code op Github <i class="fa-brands fa-github"></i></a>
+				</div>
+				<div>
+					<video loop autoplay muted src="./img/ikea-redesign.mp4"></video>
+				</div>
+			</article>
+			
+			<article id="de-serve" aria-label="de serve">
+				<div>
+					<h3>De Serve</h3>
+					<img src="./img/xd-logo.svg" alt="Gemaakt met XD" class="logo">
+					<p class="big">App prototype gebasseerd op usebility testing.</p>
+					<p class="big">Test het prototype <i class="fa-solid fa-arrow-right-long"></i></p>
+					<p>Dit app prototype heb ik gemaakt bij een groepsproject over testen met gebruikers. Daarbij hebben we in twee interaties getest en het ons prototype verbeterd. Het Recept 'Millionaire Shortbread' is volledig uitgewerkt.</p>
+				</div>
+				<div>
+					<div class="phone-frame">
+						<iframe src="about:blank" data-src="https://xd.adobe.com/embed/efe306e5-2469-409a-84a6-2579f74adc10-bab0/?fullscreen&amp;hints=off" frameborder="0" allowfullscreen="" id="adobe-xd-frame"></iframe>
+					</div>
+				</div>
+			</article>
+			
+			<article id="solar-system" aria-label="solar system">
+				<div>
+					<h3>Solar System Simulator</h3>
+					<i class="fa-brands fa-html5"></i>
+					<i class="fa-brands fa-css3-alt"></i>
+					<i class="fa-brands fa-js-square"></i>
+					<p class="big">Manipuleer tijd & ruimte en kijk hoe de planeten staan.</p>
+					<p>Dit project heb ik gemaakt om javascript te leren. Deze applicatie gebruikt veel verschillende functies van javascript, dus het was een perfect project om javascript te leren.</p>
+					<a href="http://inleiding-programmeren.hva.joppekoops.nl/" >Bekijk de website <i class="fa-solid fa-circle-arrow-right"></i><small>best op desktop</small></a>
+					<a href="https://github.com/jkhvacmd209/inleiding-programmeren">Code op Github <i class="fa-brands fa-github"></i></a>
+				</div>
+				<div>
+					<video loop autoplay muted src="./img/solar-system.mp4"></video>
+				</div>
+			</article>
+
+		</section>
+
+		<section id="over-mij">
+			<h2>Over Mij</h2>
+		</section>
+
+		<section id="contact">
+			<h2>Contact</h2>
+		</section>
+
+	</main>
+
+	<script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: #000;
+	min-height: 100vh;
+	width: 100vw;
+	color: #fff;
+	font-family: Noto Sans Display, sans-serif;
+	
+}
+
+
+/* --- Header & Navigatie --- */
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	padding: 2.5em 8em;
+	background: linear-gradient(to bottom, #000f, #0000);
+	z-index: 3;
+}
+
+nav ul {
+	display: flex;
+	list-style: none;
+	gap: 2em;
+	justify-content: flex-end;
+}
+
+nav a {
+	color: #fff;
+	opacity: 70%;
+	text-decoration: none;
+	font-size: 1.2em;
+}
+
+nav a:hover {
+	opacity: 100%;
+}
+
+
+
+/* --- Hero Section --- */
+
+section#hero {
+	display: relative;
+}
+
+section#hero canvas {
+	width: 100vw;
+	height: 100vh;
+	max-height: 80vw;
+	position: fixed;
+	top: 0;
+	z-index: -1;
+}
+
+.hero-content {
+	text-align: center;
+	padding-top: min(40vh, 40vw);
+	padding-bottom: min(40vh, 40vw);
+}
+
+h1 {
+	font-size: 2em;
+	font-weight: normal;
+}
+
+h1 span {
+	opacity: 0;
+}
+
+h1 span.big {
+	display: block;
+	font-size: 2.6em;
+	font-weight: bold;
+	background-image: radial-gradient(at 10% 50%, #ffffff, #7b7b7b);
+	width: fit-content;
+	-webkit-background-clip: text;
+	color: transparent;
+	margin: min(50vh, 40vw) auto;
+}
+
+h1 span.big:nth-of-type(2) {
+	margin-top: .2em;
+}
+
+h1 span.big:last-of-type {
+	margin-bottom: 1em;
+}
+
+.hero-content p {
+	font-size: 1.2em;
+}
+
+h2 {
+	background-image: radial-gradient(at 50% 10%, #ffffff, #7b7b7b);
+	width: fit-content;
+	-webkit-background-clip: text;
+	color: transparent;
+	font-size: 3em;
+	margin: auto;
+	margin-bottom: 1em;
+}
+
+
+
+/* --- Skills Section --- */
+
+section#skills {
+	padding: 2.5em 8em 8em 8em;
+	background-color: #000;
+}
+
+section#skills div {
+	width: 100%;
+}
+
+section#skills > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8em;
+}
+
+section#skills img {
+	width: 100%;
+}
+
+section#skills span {
+	font-size: 1.2em;
+	font-weight: bold;
+	display: block;
+	width: fit-content;
+	color: transparent;
+	display: flex;
+	align-items: center;
+	gap: 1ch;
+}
+
+section#skills span:first-of-type {
+	background: linear-gradient(to bottom right, #ff9900, #ff5c00);
+	-webkit-background-clip: text;
+}
+
+section#skills span:nth-of-type(2) {
+	background: linear-gradient(to bottom right, #0085ff, #0057ff);
+	-webkit-background-clip: text;
+}
+
+section#skills span:nth-of-type(3) {
+	background: linear-gradient(to bottom right, #faff00, #ffc700);
+	-webkit-background-clip: text;
+}
+
+section#skills span:nth-of-type(4) {
+	background: linear-gradient(to bottom right, #ad00ff, #8f00ff);
+	-webkit-background-clip: text;
+}
+
+section#skills i {
+	font-size: 1.6em;
+}
+
+progress {
+  -webkit-appearance: none;
+   appearance: none;
+
+  width: 100%;
+  height: .5em;
+  border-radius: .25em;
+  overflow: hidden;
+  margin-bottom: 2em;
+  margin-top: .5em;
+}
+
+progress::-webkit-progress-value {
+	transition: .5s;
+	border-radius: .25em;
+}
+
+progress:first-of-type::-webkit-progress-value {
+	background: linear-gradient(to bottom right, #ff9900, #ff5c00);
+}
+
+progress:nth-of-type(2)::-webkit-progress-value {
+	background: linear-gradient(to bottom right, #0085ff, #0057ff);
+}
+
+progress:nth-of-type(3)::-webkit-progress-value {
+	background: linear-gradient(to bottom right, #faff00, #ffc700);
+}
+
+progress:nth-of-type(4)::-webkit-progress-value {
+	background: linear-gradient(to bottom right, #ad00ff, #8f00ff);
+}
+
+section#skills img.logo {
+	height: 2em;
+	width: auto;
+	margin-right: 2em;
+	margin-top: 1em;
+}
+
+
+
+/* --- Projecten Section --- */
+
+section#projecten {
+	padding: 2.5em 0 8em 0;
+	background-color: #000;
+}
+
+
+/* articles */
+
+article {
+	display: flex;
+	gap: 8em;
+	margin-bottom: 16em;
+	align-items: center;
+	position: relative;
+	padding-left: 8em;
+	padding-right: 8em;
+}
+
+article div {
+	width: 100%;
+}
+
+article:nth-of-type(2n + 1) div:first-of-type {
+	order: 1;
+	z-index: 2;
+}
+
+
+/* article tekst */
+
+article h3 {
+	font-size: 2em;
+	line-height: 2;
+	font-weight: lighter;
+}
+
+article i {
+	font-size: 1.4em;
+	margin-right: 1ch;
+}
+
+article img.logo {
+	height: 1.4em;
+}
+
+article p {
+	font-size: 1em;
+	font-weight: normal;
+	line-height: 1.6;
+	margin: 1em 0;
+	display: flex;
+	align-items: center;
+	gap: 1ch;
+}
+
+article p.big {
+	font-size: 1.4em;
+	line-height: 1.4;
+	font-weight: bold;
+}
+
+article p:last-of-type {
+	margin-bottom: 3em;
+}
+
+
+/* article linkjes */
+
+article a {
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	display: block;
+	margin: 2em 0;
+}
+
+article a:hover {
+	text-decoration: underline;
+}
+
+article a i {
+	font-size: 1em;
+	transition: .2s;
+}
+
+article a:hover i {
+	transform: translateX(.5em);
+}
+
+article a small {
+	opacity: 0;
+	text-transform: capitalize;
+	font-weight: 100;
+	display: block;
+}
+
+article a:hover small {
+	opacity: 1;
+}
+
+
+/* Ikea herontwerp article */
+
+article#ikea-herontwerp video {
+	width: 140%;
+	margin-bottom: -25%;
+	margin-left: -10%;
+}
+
+article#ikea-herontwerp p:first-of-type {
+	color: #FBD914;
+}
+
+article#ikea-herontwerp p:last-of-type {
+	color: #0058AB;
+}
+
+
+/* De Serve article */
+
+article#de-serve .phone-frame {
+	background-image: url(../img/iphone-frame.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	z-index: 3;
+}
+
+article#de-serve iframe {
+	border-radius: .2em;
+	margin: 6em;
+	aspect-ratio: 375/667;
+	width: 80%;
+}
+
+article#de-serve p:first-of-type {
+	color: #FFA740;
+}
+
+
+/* Solar System article */
+
+article#solar-system video {
+	position: absolute;
+	width: 100vw;
+	left: 0;
+	top: 0;
+	z-index: 0;
+}
+
+article#solar-system p:first-of-type {
+	color: #9999ff;
+	text-shadow: 0px 0px 10px #9999ff;
+}
+
