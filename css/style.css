@@ -18,6 +18,14 @@ body {
 	
 }
 
+a {
+	text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+	text-decoration: underline;
+}
+
 
 /* --- Header & Navigatie --- */
 
@@ -26,7 +34,7 @@ header {
 	top: 0;
 	left: 0;
 	width: 100vw;
-	padding: 2.5em 8em;
+	padding: 2.5em 10vw;
 	background: linear-gradient(to bottom, #000f, #0000);
 	z-index: 3;
 }
@@ -41,11 +49,10 @@ nav ul {
 nav a {
 	color: #fff;
 	opacity: 70%;
-	text-decoration: none;
 	font-size: 1.2em;
 }
 
-nav a:hover {
+nav a:hover, a:active, a:focus {
 	opacity: 100%;
 }
 
@@ -67,18 +74,13 @@ section#hero canvas {
 }
 
 .hero-content {
-	text-align: center;
-	padding-top: min(40vh, 40vw);
-	padding-bottom: min(40vh, 40vw);
+	padding: 8em 0 2em 0;
+	margin: 0 10vw;
 }
 
 h1 {
-	font-size: 2em;
+	font-size: min(4vw, 2em);
 	font-weight: normal;
-}
-
-h1 span {
-	opacity: 0;
 }
 
 h1 span.big {
@@ -89,7 +91,7 @@ h1 span.big {
 	width: fit-content;
 	-webkit-background-clip: text;
 	color: transparent;
-	margin: min(50vh, 40vw) auto;
+	margin: 1rem 0;
 }
 
 h1 span.big:nth-of-type(2) {
@@ -101,7 +103,7 @@ h1 span.big:last-of-type {
 }
 
 .hero-content p {
-	font-size: 1.2em;
+	font-size: 1em;
 }
 
 h2 {
@@ -119,7 +121,7 @@ h2 {
 /* --- Skills Section --- */
 
 section#skills {
-	padding: 2.5em 8em 8em 8em;
+	padding: 2.5em 10vw 4em 10vw;
 	background-color: #000;
 }
 
@@ -129,9 +131,10 @@ section#skills div {
 
 section#skills > div {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 8em;
+	gap: 10vw;
 }
 
 section#skills img {
@@ -218,7 +221,7 @@ section#skills img.logo {
 /* --- Projecten Section --- */
 
 section#projecten {
-	padding: 2.5em 0 8em 0;
+	padding: 2.5em 0 2em 0;
 	background-color: #000;
 }
 
@@ -227,12 +230,12 @@ section#projecten {
 
 article {
 	display: flex;
-	gap: 8em;
-	margin-bottom: 16em;
+	flex-direction: column;
+	margin-bottom: 2em;
+	border-bottom: 1px solid #333;
 	align-items: center;
 	position: relative;
-	padding-left: 8em;
-	padding-right: 8em;
+	padding: 0 10vw 2em 10vw;
 }
 
 article:last-of-type {
@@ -291,14 +294,9 @@ article p:last-of-type {
 
 article a {
 	color: white;
-	text-decoration: none;
 	text-transform: uppercase;
 	display: block;
-	margin: 2em 0;
-}
-
-article a:hover {
-	text-decoration: underline;
+	margin: 1em 0;
 }
 
 article a i {
@@ -325,9 +323,8 @@ article a:hover small {
 /* Ikea herontwerp article */
 
 article#ikea-herontwerp video {
-	width: 140%;
-	margin-bottom: -25%;
-	margin-left: -10%;
+	width: 100vw;
+	margin-left: -10vw;
 }
 
 article#ikea-herontwerp p:first-of-type {
@@ -367,13 +364,10 @@ article#de-serve p:first-of-type {
 /* Solar System article */
 
 article#solar-system video {
-	position: absolute;
-	width: 100vw;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	margin: auto;
+	width: 200vw;
 	z-index: 0;
+	margin-left: -10vw;
+	margin-bottom: -12em;
 }
 
 article#solar-system p:first-of-type {
@@ -385,23 +379,18 @@ article#solar-system p:first-of-type {
 
 section#over-mij {
 	background: #000;
-	//padding: 0 8em;
-}
-
-section#over-mij div div {
-	width: 50%;
 }
 
 section#over-mij > div {
 	display: flex;
-	align-items: center;
-	gap: 4em;
+	flex-direction: column;
+	gap: 1em;
 }
 
 section#over-mij div div:first-of-type {
 	order: 1;
 	z-index: 1;
-	padding-right: 8em;
+	padding: 0 10vw;
 }
 
 section#over-mij p {
@@ -411,7 +400,7 @@ section#over-mij p {
 }
 
 section#over-mij img {
-	width: 80vw;
+	width: 140vw;
 }
 
 
@@ -419,7 +408,7 @@ section#over-mij img {
 /* --- Contact form Section --- */
 
 section#contact {
-	padding: 8em 0;
+	padding: 4em 0 0 0;
 	background: #000;
 }
 
@@ -436,19 +425,19 @@ form > div {
 	width: 100%;
 	justify-content: center;
 	margin-bottom: 1em;
-	grid-template-columns: max-content max-content max-content;
+	grid-template-columns: max-content max-content;
 	gap: 1em;
+	align-content: flex-start;
 }
 
 label {
 	font-size: 1.4em;
-	line-height: 3rem;
-	grid-column: 1;
-	text-align: right;
+	line-height: 1;
+	grid-column: 1/3;
 }
 
 .input-group {
-	grid-column: 2;
+	grid-column: 1;
 }
 
 input {
@@ -468,7 +457,6 @@ textarea {
 	padding: .5rem 2rem;
 	border-radius: 1.5rem;
 	resize: none;
-	grid-column: 2;
 	display: block;
 	font-family: Noto Sans Display, sans-serif;
 }
@@ -484,7 +472,7 @@ form button {
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
-	grid-column: 3;
+	grid-column: 2;
 }
 
 form button:hover {
@@ -547,8 +535,7 @@ form button:hover {
 /* --- Footer --- */
 
 footer {
-	display: flex;
-	padding: 2.5em 8em;
+	padding: 2.5em 10vw;
 	background-color: #111
 }
 
@@ -562,11 +549,7 @@ footer p {
 
 footer a {
 	color: #fff;
-	text-decoration: none;
-}
-
-footer a:hover {
-	text-decoration: underline;
+	margin: 1em 0;
 }
 
 footer ul {
@@ -575,5 +558,110 @@ footer ul {
 
 footer li {
 	margin: 1em 0;
+}
+
+
+/* --- Stijlen voor grootformaat --- */
+
+@media (min-width: 800px) {
+
+	.hero-content {
+		text-align: center;
+		padding-top: min(40vh, 40vw);
+		padding-bottom: min(40vh, 40vw);
+	}
+
+	.hero-content p {
+		font-size: 1.2em;
+	}
+
+	h1 span.big {
+		margin: min(50vh, 40vw) auto;
+	}
+
+	section#skills {
+		padding: 2.5em 10vw 8em 10vw;
+	}
+
+	section#skills > div {
+		flex-direction: row;
+		gap: 10vw;
+	}
+
+	section#projecten {
+		padding: 2.5em 0 8em 0;
+	}
+
+	article {
+		flex-direction: row;
+		gap: 10vw;
+		margin-bottom: 16em;
+		border: none;
+		padding: 0 10vw 0 10vw;
+	}
+
+	article a {
+		margin: 2em 0;
+	}
+
+	article#ikea-herontwerp video {
+		width: 140%;
+		margin-bottom: -25%;
+		margin-left: -10%;
+	}
+
+	article#solar-system video {
+		margin: auto;
+		position: absolute;
+		width: 100vw;
+		left: 0;
+		top: 0;
+		bottom: 0;
+	}
+
+	section#over-mij > div {
+		flex-direction: row;
+		align-items: center;
+		gap: 4em;
+	}
+
+	section#over-mij div div {
+		width: 50%;
+	}
+
+	section#over-mij div div:first-of-type {
+		padding: 0 10vw 0 0;
+	}
+
+	section#over-mij img {
+		width: 80vw;
+	}
+
+	section#contact {
+		padding: 8em 0;
+	}
+
+	form > div {
+		grid-template-columns: max-content max-content max-content;
+	}
+
+	label {
+		grid-column: 1;
+		text-align: right;
+		line-height: 2rem;
+	}
+
+	.input-group {
+		grid-column: 2;
+	}
+
+	form button {
+		grid-column: 3;
+	}
+
+	footer {
+		display: flex;
+	}
+
 }
 
