@@ -71,8 +71,8 @@
 					<i class="fa-brands fa-js-square"></i>
 					<p class="big">Webdesign met focus op screenreader toegankelijkheid.</p>
 					<p class="big">+ Leuke easteregg met javascript.</p>
-					<a href="https://jkhvacmd209.github.io/frontend-development/planten.html" >Bekijk de website <i class="fa-solid fa-circle-arrow-right"></i><small>best op mobiel</small></a>
-					<a href="https://github.com/jkhvacmd209/frontend-development">Code op Github <i class="fa-brands fa-github"></i></a>
+					<a href="https://jkhvacmd209.github.io/frontend-development/planten.html" target="_blank">Bekijk de website <i class="fa-solid fa-circle-arrow-right"></i><small>best op mobiel</small></a>
+					<a href="https://github.com/jkhvacmd209/frontend-development" target="_blank">Code op Github <i class="fa-brands fa-github"></i></a>
 				</div>
 				<div>
 					<video loop autoplay muted src="./img/ikea-redesign.mp4"></video>
@@ -102,8 +102,8 @@
 					<i class="fa-brands fa-js-square"></i>
 					<p class="big">Manipuleer tijd & ruimte en kijk hoe de planeten staan.</p>
 					<p>Dit project heb ik gemaakt om javascript te leren. Deze applicatie gebruikt veel verschillende functies van javascript, dus het was een perfect project om javascript te leren.</p>
-					<a href="http://inleiding-programmeren.hva.joppekoops.nl/" >Bekijk de website <i class="fa-solid fa-circle-arrow-right"></i><small>best op desktop</small></a>
-					<a href="https://github.com/jkhvacmd209/inleiding-programmeren">Code op Github <i class="fa-brands fa-github"></i></a>
+					<a href="http://inleiding-programmeren.hva.joppekoops.nl/" target="_blank">Bekijk de website <i class="fa-solid fa-circle-arrow-right"></i><small>best op desktop</small></a>
+					<a href="https://github.com/jkhvacmd209/inleiding-programmeren" target="_blank">Code op Github <i class="fa-brands fa-github"></i></a>
 				</div>
 				<div>
 					<video loop autoplay muted src="./img/solar-system.mp4"></video>
@@ -114,13 +114,62 @@
 
 		<section id="over-mij">
 			<h2>Over Mij</h2>
+			<div>
+				<div>
+					<p>Al sinds de middelbare school ben ik bezig met het maken van beeld. Dit begon met het maken van een film. Daarvoor heb ik zelf uitgezocht hoe alle techniek werkt en samen met een groep vrienden de film opgenomen.</p>
+					<p>Hoewel ik nog steeds graag film maak, ligt de focus meer op het maken van websites. Ik heb via internet zelf veel daarover uitgezocht en voor mezelf enkele projecten gemaakt.</p>
+					<p>Om dit verder uit te bereiden doe ik nu de opleiding Communication & Multimedia Design aan de Hogeschool van Amsterdam. Daar leer ik meer over ontwerpen, gebruikers en development.</p>
+				</div>
+				<div>
+					<img src="./img/over-mij-foto.jpg" width="80%"/>
+				</div>
+			</div>
 		</section>
 
 		<section id="contact">
 			<h2>Contact</h2>
+			<span id="success-message"></span>
+
+			<form action="">
+				<div>
+					<label for="name">Naam</label>
+					<div class="input-group"><input type="text" id="name" name="name" autocomplete="name" required><span class="validity"></span></div>
+					<button type="button" id="validate-1"><i class="fa-solid fa-caret-right"></i></button>
+				</div>
+				<div>
+					<label for="email">E-mail adres</label>
+					<div class="input-group"><input type="email" id="email" name="email" autocomplete="email" required tabindex="-1"><span class="validity"></span></div>
+					<button type="button" id="validate-2" tabindex="-1"><i class="fa-solid fa-caret-right"></i></button>
+				</div>
+				<div>
+					<label for="subject">Onderwerp</label>
+					<div class="input-group"><input type="text" id="subject" name="subject" autocomplete="off" required tabindex="-1"><span class="validity"></span></div>
+					<label for="message">Bericht</label>
+					<div class="input-group"><textarea name="message" id="message" cols="30" rows="10" required tabindex="-1"></textarea><span class="validity"></span></div>
+					<button type="button" id="send" tabindex="-1"><i class="fa-solid fa-paper-plane"></i></button>
+					<div class="lds-dual-ring" id="loader"></div>
+				</div>
+			</form>
 		</section>
 
 	</main>
+
+	<footer>
+		<div>
+			<p>Copyright © Joppe Koops 2022. All rights reserved.</p>
+			<a href="https://github.com/jkhvacmd209/portfolio" target="_blank">Bekijk de code op github</a>
+		</div>
+		<div>
+		</div>
+		<div>
+			<h3>Contact information</h3>
+			<ul>
+				<li>💬 <a href="#contact">Contact Formulier</a></li>
+				<li>✉️ E-mail: <a href="mailto:joppe.koops@gmail.com" target="_blank">joppe.koops@gmail.com</a></li>
+				<li>📱 <a href="https://wa.me/31623656864" target="_blank">WhatsApp</a></li>
+			</ul>
+		</div>
+	</footer>
 
 	<script src="./js/script.js"></script>
 </body>

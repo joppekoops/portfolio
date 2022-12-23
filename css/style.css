@@ -12,6 +12,7 @@ body {
 	background-color: #000;
 	min-height: 100vh;
 	width: 100vw;
+	overflow-x: hidden;
 	color: #fff;
 	font-family: Noto Sans Display, sans-serif;
 	
@@ -234,6 +235,10 @@ article {
 	padding-right: 8em;
 }
 
+article:last-of-type {
+	margin-bottom: 4em;
+}
+
 article div {
 	width: 100%;
 }
@@ -366,11 +371,209 @@ article#solar-system video {
 	width: 100vw;
 	left: 0;
 	top: 0;
+	bottom: 0;
+	margin: auto;
 	z-index: 0;
 }
 
 article#solar-system p:first-of-type {
 	color: #9999ff;
-	text-shadow: 0px 0px 10px #9999ff;
+}
+
+
+/* --- Over mij section --- */
+
+section#over-mij {
+	background: #000;
+	//padding: 0 8em;
+}
+
+section#over-mij div div {
+	width: 50%;
+}
+
+section#over-mij > div {
+	display: flex;
+	align-items: center;
+	gap: 4em;
+}
+
+section#over-mij div div:first-of-type {
+	order: 1;
+	z-index: 1;
+	padding-right: 8em;
+}
+
+section#over-mij p {
+	font-size: 1em;
+	line-height: 1.6;
+	margin: 2em 0;
+}
+
+section#over-mij img {
+	width: 80vw;
+}
+
+
+
+/* --- Contact form Section --- */
+
+section#contact {
+	padding: 8em 0;
+	background: #000;
+}
+
+form {
+	width: 100%;
+	position: relative;
+	transition: .5s;
+	display: grid;
+	grid-template-columns: 100vw 100vw 100vw;
+}
+
+form > div {
+	display: grid;
+	width: 100%;
+	justify-content: center;
+	margin-bottom: 1em;
+	grid-template-columns: max-content max-content max-content;
+	gap: 1em;
+}
+
+label {
+	font-size: 1.4em;
+	line-height: 3rem;
+	grid-column: 1;
+	text-align: right;
+}
+
+.input-group {
+	grid-column: 2;
+}
+
+input {
+	background-color: #fff;
+	border: none;
+	font-size: 1.4em;
+	padding: 0 2rem;
+	height:	3rem;
+	border-radius: 3rem;
+	display: block
+}
+
+textarea {
+	background-color: #fff;
+	border: none;
+	font-size: 1.4em;
+	padding: .5rem 2rem;
+	border-radius: 1.5rem;
+	resize: none;
+	grid-column: 2;
+	display: block;
+	font-family: Noto Sans Display, sans-serif;
+}
+
+form button {
+	background-color: #fff;
+	border: none;
+	font-size: 1.4em;
+	height:	3rem;
+	width: 3rem;
+	border-radius: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	grid-column: 3;
+}
+
+form button:hover {
+	transform: scale(.9);
+}
+
+#send {
+	align-self: flex-end;
+}
+
+.invalid {
+	outline: 2px solid #FFA740;
+	color: #FFA740;
+}
+
+.validity {
+	color: #FFA740;
+	line-height: 2;
+}
+
+#success-message {
+	color: lightgreen;
+	text-align: center;
+	margin-bottom: 1em;
+	font-size: 1.4em;
+	display: none;
+}
+
+
+
+/* loader bron: https://loading.io/css/ */
+
+.lds-dual-ring {
+  display: none;
+  width: 3rem;
+  height: 3rem;
+  align-self: flex-end;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* --- Footer --- */
+
+footer {
+	display: flex;
+	padding: 2.5em 8em;
+	background-color: #111
+}
+
+footer div {
+	width: 100%;
+}
+
+footer p {
+	margin: 1em 0;
+}
+
+footer a {
+	color: #fff;
+	text-decoration: none;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+footer ul {
+	list-style: none;
+}
+
+footer li {
+	margin: 1em 0;
 }
 
