@@ -193,24 +193,48 @@ progress {
   border: none;
 }
 
-progress::-webkit-progress-value, progress::-moz-progress-bar {
+/*progress voor webkit browsers */
+
+progress::-webkit-progress-value {
 	transition: .5s;
 	border-radius: .25em;
 }
 
-progress:first-of-type::-webkit-progress-value, progress:first-of-type::-moz-progress-bar {
+progress:first-of-type::-webkit-progress-value {
 	background: linear-gradient(to bottom right, #ff9900, #ff5c00);
 }
 
-progress:nth-of-type(2)::-webkit-progress-value, progress:nth-of-type(2)::-moz-progress-bar {
+progress:nth-of-type(2)::-webkit-progress-value {
 	background: linear-gradient(to bottom right, #0085ff, #0057ff);
 }
 
-progress:nth-of-type(3)::-webkit-progress-value, progress:nth-of-type(3)::-moz-progress-bar {
+progress:nth-of-type(3)::-webkit-progress-value {
 	background: linear-gradient(to bottom right, #faff00, #ffc700);
 }
 
-progress:nth-of-type(4)::-webkit-progress-value, progress:nth-of-type(4)::-moz-progress-bar {
+progress:nth-of-type(4)::-webkit-progress-value {
+	background: linear-gradient(to bottom right, #ad00ff, #8f00ff);
+}
+
+/* progress voor mozilla */
+
+progress::-moz-progress-bar {
+	border-radius: .25em;
+}
+
+progress:first-of-type::-moz-progress-bar {
+	background: linear-gradient(to bottom right, #ff9900, #ff5c00);
+}
+
+progress:nth-of-type(2)::-moz-progress-bar {
+	background: linear-gradient(to bottom right, #0085ff, #0057ff);
+}
+
+progress:nth-of-type(3)::-moz-progress-bar {
+	background: linear-gradient(to bottom right, #faff00, #ffc700);
+}
+
+progress:nth-of-type(4)::-moz-progress-bar {
 	background: linear-gradient(to bottom right, #ad00ff, #8f00ff);
 }
 
