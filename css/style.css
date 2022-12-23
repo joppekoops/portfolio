@@ -422,7 +422,8 @@ form {
 
 form > div {
 	display: grid;
-	width: 100%;
+	width: 80%;
+	margin: 0 10vw;
 	justify-content: center;
 	margin-bottom: 1em;
 	grid-template-columns: max-content max-content;
@@ -447,7 +448,8 @@ input {
 	padding: 0 2rem;
 	height:	3rem;
 	border-radius: 3rem;
-	display: block
+	display: block;
+	max-width: 60vw;
 }
 
 textarea {
@@ -459,6 +461,7 @@ textarea {
 	resize: none;
 	display: block;
 	font-family: Noto Sans Display, sans-serif;
+	max-width: 60vw;
 }
 
 form button {
