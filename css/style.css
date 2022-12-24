@@ -7,9 +7,9 @@
 
 :root {
 	scroll-behavior: smooth;
-	--max-width: 72rem;
+	--max-width: 90rem;
 	--side-margin: 10vw;
-	--page-width: calc(100vw - 2*var(--side-margin));
+	--page-width: calc(100vw - 2 * var(--side-margin));
 }
 
 html, body {
@@ -127,7 +127,7 @@ h2 {
 /* --- Skills Section --- */
 
 section#skills {
-	padding: 2.5em var(--side-margin) 4em var(--side-margin);
+	padding: 2.5em var(--side-margin) 11vh var(--side-margin);
 	background-color: #000;
 }
 
@@ -284,6 +284,14 @@ article:nth-of-type(2n + 1) div:first-of-type {
 	z-index: 2;
 }
 
+article div:first-of-type > * {
+	max-width: calc((var(--max-width) - var(--side-margin)) / 2);
+}
+
+article:nth-of-type(2n) div:first-of-type > div {
+	margin: 0 0 0 auto;
+}
+
 
 /* article tekst */
 
@@ -374,6 +382,10 @@ article#ikea-herontwerp p:last-of-type {
 
 /* De Serve article */
 
+article#de-serve {
+	z-index: 1;
+}
+
 article#de-serve .phone-frame {
 	background-image: url(../img/iphone-frame.png);
 	background-size: contain;
@@ -423,6 +435,8 @@ article#solar-system p:first-of-type {
 
 section#over-mij {
 	background: #000;
+	z-index: 1;
+	position: relative;
 }
 
 section#over-mij > div {
@@ -453,7 +467,7 @@ section#over-mij img {
 /* --- Contact form Section --- */
 
 section#contact {
-	padding: 4em 0 0 0;
+	padding: 11vh 0 0 0;
 	background: #000;
 }
 
@@ -640,7 +654,7 @@ footer li {
 	}
 
 	section#projecten {
-		padding: 2.5em 0 8em 0;
+		padding: 2.5em 0 22vh 0;
 	}
 
 	article {
