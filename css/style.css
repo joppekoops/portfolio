@@ -43,6 +43,7 @@ header {
 	padding: 2.5em var(--side-margin);
 	background: linear-gradient(to bottom, #000f, #0000);
 	z-index: 3;
+	display: none;
 }
 
 nav ul {
@@ -388,6 +389,7 @@ article#de-serve iframe {
 	width: 375px;
 	height: 667px;
 	transform-origin: top left;
+	border-radius: .2em;
 }
 
 article#de-serve .phone-frame div {
@@ -614,6 +616,10 @@ footer li {
 /* --- Stijlen voor grootformaat --- */
 
 @media (min-width: 800px) {
+
+	header {
+		display: block;
+	}
 
 	.hero-content {
 		text-align: center;
