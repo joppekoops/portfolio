@@ -7,6 +7,9 @@
 
 :root {
 	scroll-behavior: smooth;
+	--max-width: 72rem;
+	--side-margin: 10vw;
+	--page-width: calc(100vw - 2*var(--side-margin));
 }
 
 html, body {
@@ -36,8 +39,8 @@ header {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100vw;
-	padding: 2.5em 10vw;
+	right: 0;
+	padding: 2.5em var(--side-margin);
 	background: linear-gradient(to bottom, #000f, #0000);
 	z-index: 3;
 }
@@ -77,8 +80,8 @@ section#hero canvas {
 }
 
 .hero-content {
-	padding: 8em 0 2em 0;
-	margin: 0 10vw;
+	padding: 8em 0;
+	margin: 0 var(--side-margin);
 }
 
 h1 {
@@ -105,9 +108,8 @@ h1 span.big:last-of-type {
 	margin-bottom: 1em;
 }
 
-.hero-content p {
-	font-size: 1em;
-}
+
+/* --- Section Styles --- */
 
 h2 {
 	background-image: radial-gradient(at 50% 10%, #ffffff, #7b7b7b);
@@ -124,12 +126,12 @@ h2 {
 /* --- Skills Section --- */
 
 section#skills {
-	padding: 2.5em 10vw 4em 10vw;
+	padding: 2.5em var(--side-margin) 4em var(--side-margin);
 	background-color: #000;
 }
 
 section#skills div {
-	width: 100%;
+
 }
 
 section#skills > div {
@@ -137,7 +139,7 @@ section#skills > div {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 10vw;
+	gap: var(--side-margin);
 }
 
 section#skills img {
@@ -185,6 +187,7 @@ progress {
   appearance: none;
 
   width: 100%;
+  max-width: 32rem;
   height: .5em;
   border-radius: .25em;
   overflow: hidden;
@@ -264,7 +267,7 @@ article {
 	border-bottom: 1px solid #333;
 	align-items: center;
 	position: relative;
-	padding: 0 10vw 2em 10vw;
+	padding: 0 var(--side-margin) 2em var(--side-margin);
 }
 
 article:last-of-type {
@@ -348,12 +351,15 @@ article a:hover small {
 	opacity: 1;
 }
 
+article video {
+	margin-left: calc(-1 * var(--side-margin));
+}
+
 
 /* Ikea herontwerp article */
 
 article#ikea-herontwerp video {
 	width: 100vw;
-	margin-left: -10vw;
 }
 
 article#ikea-herontwerp p:first-of-type {
@@ -395,7 +401,6 @@ article#de-serve p:first-of-type {
 article#solar-system video {
 	width: 200vw;
 	z-index: 0;
-	margin-left: -10vw;
 	margin-bottom: -12em;
 }
 
@@ -419,13 +424,14 @@ section#over-mij > div {
 section#over-mij div div:first-of-type {
 	order: 1;
 	z-index: 1;
-	padding: 0 10vw;
+	padding: 0 var(--side-margin);
 }
 
 section#over-mij p {
 	font-size: 1em;
 	line-height: 1.6;
 	margin: 2em 0;
+	max-width: calc((var(--max-width) - var(--side-margin)) / 2);
 }
 
 section#over-mij img {
@@ -452,7 +458,7 @@ form {
 form > div {
 	display: grid;
 	width: 80%;
-	margin: 0 10vw;
+	margin: 0 var(--side-margin);
 	justify-content: center;
 	margin-bottom: 1em;
 	grid-template-columns: max-content max-content;
@@ -568,8 +574,11 @@ form button:hover {
 /* --- Footer --- */
 
 footer {
-	padding: 2.5em 10vw;
-	background-color: #111
+	padding: 2.5em var(--side-margin);
+	background-color: #111;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
 }
 
 footer div {
@@ -612,13 +621,8 @@ footer li {
 		margin: min(50vh, 40vw) auto;
 	}
 
-	section#skills {
-		padding: 2.5em 10vw 8em 10vw;
-	}
-
 	section#skills > div {
 		flex-direction: row;
-		gap: 10vw;
 	}
 
 	section#projecten {
@@ -627,10 +631,10 @@ footer li {
 
 	article {
 		flex-direction: row;
-		gap: 10vw;
+		gap: var(--side-margin);
 		margin-bottom: 16em;
 		border: none;
-		padding: 0 10vw 0 10vw;
+		padding: 0 var(--side-margin);
 	}
 
 	article a {
@@ -655,7 +659,7 @@ footer li {
 	section#over-mij > div {
 		flex-direction: row;
 		align-items: center;
-		gap: 4em;
+		gap: calc(var(--side-margin) / 2);
 	}
 
 	section#over-mij div div {
@@ -663,11 +667,15 @@ footer li {
 	}
 
 	section#over-mij div div:first-of-type {
-		padding: 0 10vw 0 0;
+		padding: 0 var(--side-margin) 0 0;
 	}
 
 	section#over-mij img {
 		width: 80vw;
+	}
+
+	section#over-mij p {
+
 	}
 
 	section#contact {
@@ -693,7 +701,7 @@ footer li {
 	}
 
 	footer {
-		display: flex;
+		flex-direction: row;
 	}
 
 }
