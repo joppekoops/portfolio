@@ -385,10 +385,18 @@ article#de-serve .phone-frame {
 }
 
 article#de-serve iframe {
-	border-radius: .2em;
-	margin: 6em;
+	width: 375px;
+	height: 667px;
+	transform-origin: top left;
+}
+
+article#de-serve .phone-frame div {
+	height: 100%;
 	aspect-ratio: 375/667;
-	width: 80%;
+	border-radius: .2em;
+	margin: 20%;
+	overflow: hidden;
+
 }
 
 article#de-serve p:first-of-type {

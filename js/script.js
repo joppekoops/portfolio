@@ -117,6 +117,8 @@ window.addEventListener("scroll", () => {
 	}
 })
 
+xdFrame.style.transform = "scale(" + xdFrame.parentElement.clientWidth/375 + ")";
+
 
 // Code voor formulier
 
