@@ -120,6 +120,21 @@ window.addEventListener("scroll", () => {
 xdFrame.style.transform = "scale(" + xdFrame.parentElement.clientWidth/375 + ")";
 
 
+// Code voor video's
+
+const videos = document.querySelectorAll('video');
+
+videos.forEach((video) => {
+	window.addEventListener("scroll", () => {
+		if (video.getBoundingClientRect().top / window.innerHeight < 1 && video.getBoundingClientRect().top / window.innerHeight > 0) {
+			if(video.paused){
+				video.play();
+			}
+		}
+	})
+})
+
+
 // Code voor formulier
 
 const nameInput = document.getElementById('name');

@@ -254,7 +254,7 @@ section#skills img.logo {
 /* --- Projecten Section --- */
 
 section#projecten {
-	padding: 2.5em 0 2em 0;
+	padding: 2.5em 0 11vh 0;
 	background-color: #000;
 }
 
@@ -437,6 +437,7 @@ section#over-mij {
 	background: #000;
 	z-index: 1;
 	position: relative;
+	padding: 2.5em 0 11vh 0;
 }
 
 section#over-mij > div {
@@ -467,7 +468,6 @@ section#over-mij img {
 /* --- Contact form Section --- */
 
 section#contact {
-	padding: 11vh 0 0 0;
 	background: #000;
 }
 
@@ -651,10 +651,6 @@ footer li {
 
 	section#skills > div {
 		flex-direction: row;
-	}
-
-	section#projecten {
-		padding: 2.5em 0 22vh 0;
 	}
 
 	article {
