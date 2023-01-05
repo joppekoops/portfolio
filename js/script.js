@@ -45,15 +45,23 @@ const updateImage = index => {
 	context.drawImage(img, x, y, img.width * scale, img.height * scale);
 }
 
-window.addEventListener('load', function() {
-
+images[startFrame].addEventListener('load', function() {
 	if (html.scrollTop < window.innerHeight) {
 		for (let i = 1; i < startFrame; i++) {
 			setTimeout(() => {requestAnimationFrame(() => updateImage(i))}, i*1000/50);
 		}
 	}
+});
 
-})
+// window.addEventListener('load', function() {
+
+// 	if (html.scrollTop < window.innerHeight) {
+// 		for (let i = 1; i < startFrame; i++) {
+// 			setTimeout(() => {requestAnimationFrame(() => updateImage(i))}, i*1000/50);
+// 		}
+// 	}
+
+// })
 
 window.addEventListener('scroll', () => {  
 	const scrollTop = html.scrollTop;
