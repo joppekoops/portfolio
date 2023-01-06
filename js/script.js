@@ -9,7 +9,7 @@ const frameCount = 438; // Het totaal aantal frames van de animatie
 const startFrame = 120; // Het punt waarop het laden stopt en de animatie op scroll reageert
 
 const currentFrame = index => (
-	`./img/background/background-${index.toString().padStart(3, '0')}.jpeg`
+	`./img/background/background-${index.toString().padStart(3, '0')}.webp`
 )
 
 const images = [];
