@@ -156,7 +156,7 @@ const form = document.querySelector('form');
 const successMessage = document.getElementById('success-message');
 const loader = document.getElementById('loader');
 let formValid = true;
-const endPoint = "https://script.google.com/macros/s/AKfycbyti1UHlpOxCAnHiVI-bdos9_ZKQ1-5pCanw72WIe0VpMQJpoZzHEsAOf0yqD3fTDfFtw/exec";
+const endPoint = "https://script.google.com/macros/s/AKfycbyGjP8YETphG8g85U59EoglYFAIbo7Xdvd5RDXRJFedAtJYyL3MaZE_XOpInnVxqUDYFg/exec";
 
 firstValidationButton.addEventListener("click", () => {
 	if (nameInput.value == "") {
