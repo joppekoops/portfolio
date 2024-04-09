@@ -78,6 +78,9 @@ section#hero canvas {
 	position: fixed;
 	top: 0;
 	z-index: -1;
+	background-image: url('../img/background.jpeg');
+	background-size: cover;
+	background-position: center;
 }
 
 .hero-content {
