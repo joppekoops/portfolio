@@ -149,93 +149,57 @@ const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
 const subjectInput = document.getElementById('subject');
 const messageInput = document.getElementById('message');
-const firstValidationButton = document.getElementById('validate-1');
-const secondValidationButton = document.getElementById('validate-2');
 const submitButton = document.getElementById('send');
 const form = document.querySelector('form');
 const successMessage = document.getElementById('success-message');
 const loader = document.getElementById('loader');
-let formValid = true;
 const endPoint = "https://script.google.com/macros/s/AKfycbyGjP8YETphG8g85U59EoglYFAIbo7Xdvd5RDXRJFedAtJYyL3MaZE_XOpInnVxqUDYFg/exec";
 
-firstValidationButton.addEventListener("click", () => {
-	if (nameInput.value == "") {
-		
-		formValid = false;
-		nameInput.setCustomValidity("Vergeet niet je naam in te vullen.");
-		nameInput.classList.add("invalid");
-		nameInput.nextElementSibling.innerText = "Vergeet niet je naam in te vullen.";
-	
-	} else {
-		
-		form.style.marginLeft = "-100vw";
-		nameInput.tabIndex = -1;
-		firstValidationButton.tabIndex = -1;
-		emailInput.tabIndex = 0;
-		secondValidationButton.tabIndex = 0;
-		nameInput.setCustomValidity("");
-		formValid = true;
-		nameInput.classList.remove("invalid");
-		nameInput.nextElementSibling.innerText = "";
-	
-	}
-})
+submitButton.addEventListener("click", (e) => {
 
-secondValidationButton.addEventListener("click", () => {
-	if (emailInput.value == "") {
-
-		formValid = false;
-		emailInput.setCustomValidity("Vergeet niet je e-mail adres in te vullen.");
-		emailInput.classList.add("invalid");
-		emailInput.nextElementSibling.innerText = "Vergeet niet je e-mail adres in te vullen.";
-	
-	} else if (!emailInput.value.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
-		
-		formValid = false;
-		emailInput.setCustomValidity("Vul een correct e-mail adres in");
-		emailInput.classList.add("invalid");
-		emailInput.nextElementSibling.innerText = "Vul een correct e-mail adres in";
-	
-	} else {
-		
-		form.style.marginLeft = "-200vw";
-		emailInput.tabIndex = -1;
-		secondValidationButton.tabIndex = -1;
-		subjectInput.tabIndex = 0;
-		messageInput.tabIndex = 0;
-		submitButton.tabIndex = 0;
-		emailInput.setCustomValidity("");
-		formValid = true;
-		emailInput.classList.remove("invalid");
-		emailInput.nextElementSibling.innerText = "";
-	
-	}
-})
-
-submitButton.addEventListener("click", () => {
-
-	if (subjectInput.value == "") {
-		formValid = false;
-		subjectInput.setCustomValidity("Vergeet niet een onderwerp in te vullen.");
-		subjectInput.classList.add("invalid");
-		subjectInput.nextElementSibling.innerText = "Vergeet niet een onderwerp in te vullen.";
-	} else {
-		subjectInput.setCustomValidity("");
-		formValid = true;
-		subjectInput.classList.remove("invalid");
-		subjectInput.nextElementSibling.innerText = "";
-	}
+	e.preventDefault();
+	let formValid = true;
 
 	if (messageInput.value == "") {
-		formValid = false;
 		messageInput.setCustomValidity("Vergeet je bericht niet.");
-		messageInput.classList.add("invalid");
-		messageInput.nextElementSibling.innerText = "Vergeet je bericht niet.";
+		messageInput.reportValidity();
+		formValid = false;
 	} else {
 		messageInput.setCustomValidity("");
-		formValid = true;
-		messageInput.classList.remove("invalid");
-		messageInput.nextElementSibling.innerText = "";
+		messageInput.reportValidity();
+	}
+
+	if (subjectInput.value == "") {
+		subjectInput.setCustomValidity("Vergeet niet een onderwerp in te vullen.");
+		subjectInput.reportValidity();
+		formValid = false;
+	} else {
+		subjectInput.setCustomValidity("");
+		subjectInput.reportValidity();
+	}
+
+	if (emailInput.value == "") {
+		emailInput.setCustomValidity("Vergeet niet je e-mail adres in te vullen.");
+		emailInput.reportValidity();
+		formValid = false;
+	
+	} else if (!emailInput.value.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+		emailInput.setCustomValidity("Vul een correct e-mail adres in");
+		emailInput.reportValidity();
+		formValid = false;
+	
+	} else {
+		emailInput.setCustomValidity("");
+		emailInput.reportValidity();
+	}
+
+	if (nameInput.value == "") {
+		nameInput.setCustomValidity("Vergeet niet je naam in te vullen.");
+		nameInput.reportValidity();
+		formValid = false;
+	} else {
+		nameInput.setCustomValidity("");
+		nameInput.reportValidity();
 	}
 
 	if(formValid) {
@@ -252,6 +216,7 @@ submitButton.addEventListener("click", () => {
 
 		fetch(endPoint, {
 			method: "POST",
+			mode: "no-cors",
 			body: formData
 		})
 		.then((response) => {
@@ -268,7 +233,9 @@ submitButton.addEventListener("click", () => {
 				loader.style.display = "none";
 				submitButton.style.display = "inline-block";
 			}
-		});
+			return response.json();
+		})
+		.then((result) => console.log(result));
 	}
 
 

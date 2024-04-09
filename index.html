@@ -139,25 +139,21 @@
 			<h2>Contact</h2>
 			<span id="success-message"></span>
 
-			<form action="">
-				<div>
-					<label for="name">Naam</label>
-					<div class="input-group"><input type="text" id="name" name="name" autocomplete="name" required><span class="validity"></span></div>
-					<button type="button" id="validate-1"><i class="fa-solid fa-caret-right"></i></button>
-				</div>
-				<div>
-					<label for="email">E-mail adres</label>
-					<div class="input-group"><input type="email" id="email" name="email" autocomplete="email" required tabindex="-1"><span class="validity"></span></div>
-					<button type="button" id="validate-2" tabindex="-1"><i class="fa-solid fa-caret-right"></i></button>
-				</div>
-				<div>
-					<label for="subject">Onderwerp</label>
-					<div class="input-group"><input type="text" id="subject" name="subject" autocomplete="off" required tabindex="-1"><span class="validity"></span></div>
-					<label for="message">Bericht</label>
-					<div class="input-group"><textarea name="message" id="message" rows="10" required tabindex="-1"></textarea><span class="validity"></span></div>
-					<button type="button" id="send" tabindex="-1"><i class="fa-solid fa-paper-plane"></i></button>
-					<div class="lds-dual-ring" id="loader"></div>
-				</div>
+			<form action="https://script.google.com/macros/s/AKfycbyGjP8YETphG8g85U59EoglYFAIbo7Xdvd5RDXRJFedAtJYyL3MaZE_XOpInnVxqUDYFg/exec" method="post">
+
+				<label for="name">Naam</label>
+				<div class="input-group" data-error="Vul uw naam in"><input type="text" id="name" name="name" autocomplete="name" required><span class="validity"></span></div>
+
+				<label for="email">E-mail adres</label>
+				<div class="input-group" data-error="Vul een geldig e-mail adres in"><input type="email" id="email" name="email" autocomplete="email" required inputmode="email"><span class="validity"></span></div>
+
+				<label for="subject">Onderwerp</label>
+				<div class="input-group" data-error="Vul een onderwerp in"><input type="text" id="subject" name="subject" autocomplete="off" required><span class="validity"></span></div>
+				<label for="message">Bericht</label>
+				<div class="input-group" data-error="Vergeet uw bericht niet"><textarea name="message" id="message" rows="10" required></textarea><span class="validity"></span></div>
+				<button id="send"><i class="fa-solid fa-paper-plane"></i></button>
+				<div class="lds-dual-ring" id="loader"></div>
+
 			</form>
 		</section>
 
