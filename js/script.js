@@ -96,19 +96,22 @@ if (window.innerWidth > 800) {
 
 // Code voor skills section
 
-const progressbars = document.querySelectorAll("progress");
+const skillsItems = document.querySelectorAll("#skills li");
 
-progressbars.forEach(progressbar => {
-	progressbar.initialvalue = progressbar.value;
-	progressbar.value = 0;
-
-	window.addEventListener("scroll", () => {
-		if (progressbar.getBoundingClientRect().top < window.innerHeight*3/4) {
-			progressbar.value = progressbar.initialvalue;
+const observer = new IntersectionObserver(entries => {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add('in-view');
 		} else {
-			progressbar.value = 0;
+			entry.target.classList.remove('in-view');
 		}
-	});
+	})
+},{
+	threshold: .5
+});
+
+skillsItems.forEach(item => {
+	observer.observe(item);
 });
 
 

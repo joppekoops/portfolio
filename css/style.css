@@ -150,7 +150,7 @@ section#skills ul {
 	grid-template-columns: repeat(4, 1fr);
 	align-items: center;
 	grid-gap: 2em;
-	grid-row-gap: 1em;
+	grid-row-gap: 2em;
 }
 
 section#skills li {
@@ -159,11 +159,13 @@ section#skills li {
 	align-items: center;
 	grid-gap: .5em;
 	transition: .3s ease;
+	transform: scale(.8);
+	opacity: .7;
 }
 
-section#skills li:hover {
+/*section#skills li:hover {
 	transform: scale(1.1);
-}
+}*/
 
 section#skills img,
 section#skills svg {
@@ -180,31 +182,37 @@ section#skills span {
 section#skills li:nth-child(1) {
 	grid-column: 2/4;
 	grid-row: 2;
+	transition-delay: 0;
 }
 
 section#skills li:nth-child(2) {
 	grid-column: 1/2;
 	grid-row: 2;
+	transition-delay: .1s;
 }
 
 section#skills li:nth-child(3) {
 	grid-column: 4/5;
 	grid-row: 2;
+	transition-delay: .2s;
 }
 
 section#skills li:nth-child(4) {
 	grid-column: 1/3;
 	grid-row: 1;
+	transition-delay: 0s;
 }
 
 section#skills li:nth-child(5) {
 	grid-column: 3/5;
 	grid-row: 1;
+	transition-delay: .1s;
 }
 
 section#skills li:nth-child(6) {
 	grid-column: 1/3;
 	grid-row: 3/5;
+	transition-delay: .2s;
 }
 
 section#skills li:nth-child(6) img {
@@ -214,11 +222,13 @@ section#skills li:nth-child(6) img {
 section#skills li:nth-child(7) {
 	grid-column: 3/5;
 	grid-row: 3;
+	transition-delay: .3s;
 }
 
 section#skills li:nth-child(8) {
 	grid-column: 3/4;
 	grid-row: 4;
+	transition-delay: .4s;
 }
 
 @media (min-width: 500px) {
@@ -360,6 +370,11 @@ section#skills li:nth-child(8) {
 		grid-column: 11/13;
 		grid-row: 1;
 	}
+}
+
+section#skills li.in-view {
+	transform: scale(1);
+	opacity: 1;
 }
 
 /* --- Projecten Section --- */
