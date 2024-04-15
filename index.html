@@ -45,23 +45,40 @@
 
 		<section id="skills">
 			<h2>Mijn Skills</h2>
-			<div>
-				<div>
-					<img loading="lazy" src="./img/html-scherm.png" alt="Een laptop met op het scherm HTML code">
-				</div>
-				<div>
-					<span><i class="fa-brands fa-html5"></i>HTML</span>
-					<progress value="80" min="0" max="100" title="html 80%"></progress>
-					<span><i class="fa-brands fa-css3-alt"></i>CSS</span>
-					<progress value="80" min="0" max="100" title="css 80%"></progress>
-					<span><i class="fa-brands fa-js-square"></i>JavaScript</span>
-					<progress value="45" min="0" max="100" title="javascript 45%"></progress>
-					<span><i class="fa-brands fa-php"></i>PHP</span>
-					<progress value="60" min="0" max="100" title="php 60%"></progress>
-					<img src="./img/xd-logo.svg" alt="Adobe XD logo" class="logo">
-					<img src="./img/figma-logo.svg" alt="Figma logo" class="logo">
-				</div>
-			</div>
+			<ul>
+				<li>
+					<img src="./img/css3-alt.svg" alt="">
+					<span>CSS</span>
+				</li>
+				<li>
+					<img src="./img/html5.svg" alt="">
+					<span>HTML</span>
+				</li>
+				<li>
+					<img src="./img/js-square.svg" alt="">
+					<span>JavaScript</span>
+				</li>
+				<li>
+					<img src="./img/figma-logo.svg" alt="">
+					<span class="visually-hidden">Figma</span>
+				</li>
+				<li>
+					<img src="./img/xd-logo.svg" alt="">
+					<span class="visually-hidden">Adobe XD</span>
+				</li>
+				<li>
+					<img src="./img/universal-access-solid.svg" alt="">
+					<span>Toegankelijkheid</span>
+				</li>
+				<li>
+					<img src="./img/node-logo.svg" alt="">
+					<span class="visually-hidden">Node JS</span>
+				</li>
+				<li>
+					<img src="./img/php-logo.svg" alt="">
+					<span class="visually-hidden">PHP</span>
+				</li>
+			</ul>
 		</section>
 
 		<section id="over-mij">
@@ -151,7 +168,7 @@
 				<div class="input-group" data-error="Vul een onderwerp in"><input type="text" id="subject" name="subject" autocomplete="off" required><span class="validity"></span></div>
 				<label for="message">Bericht</label>
 				<div class="input-group" data-error="Vergeet uw bericht niet"><textarea name="message" id="message" rows="10" required></textarea><span class="validity"></span></div>
-				<button title="verzenden"><i class="fa-solid fa-paper-plane"></i></button>
+				<button title="verzenden" id="send"><i class="fa-solid fa-paper-plane"></i></button>
 				<div class="lds-dual-ring" id="loader"></div>
 
 			</form>
