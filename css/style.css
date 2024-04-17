@@ -405,7 +405,7 @@ article div {
 	width: 100%;
 }
 
-article:nth-of-type(2n + 1) div:first-of-type {
+article:nth-of-type(2n) div:first-of-type {
 	order: 1;
 	z-index: 2;
 }
@@ -414,7 +414,7 @@ article div:first-of-type > * {
 	max-width: calc((var(--max-width) - var(--side-margin)) / 2);
 }
 
-article:nth-of-type(2n) div:first-of-type > div {
+article:nth-of-type(2n + 1) div:first-of-type > div {
 	margin: 0 0 0 auto;
 }
 
@@ -425,11 +425,6 @@ article h3 {
 	font-size: 2em;
 	line-height: 2;
 	font-weight: lighter;
-}
-
-article i {
-	font-size: 1.4em;
-	margin-right: 1ch;
 }
 
 article img.logo {
@@ -491,6 +486,37 @@ article video {
 }
 
 
+/* Article tags */
+ul.tags {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	grid-gap: 2em;
+	grid-row-gap: .5em;
+	align-items: center;
+}
+
+ul.tags li {
+	display: flex;
+	grid-gap: .5em;
+	align-items: center;
+}
+
+ul.tags img {
+	height: 1.5em;
+}
+
+
+/* CSS day-ta hackathon article */
+article#css-day-ta img {
+	width: 100%;
+}
+
+article#css-day-ta p:first-of-type {
+	color: #E4B428;
+}
+
+
 /* Ikea herontwerp article */
 
 article#ikea-herontwerp video {
@@ -502,7 +528,7 @@ article#ikea-herontwerp p:first-of-type {
 }
 
 article#ikea-herontwerp p:last-of-type {
-	color: #0058AB;
+	color: #007BED;
 }
 
 
@@ -834,7 +860,7 @@ footer li {
 	article {
 		flex-direction: row;
 		gap: var(--side-margin);
-		margin-bottom: 16em;
+		margin-bottom: 8em;
 		border: none;
 		padding: 0 var(--side-margin);
 	}
