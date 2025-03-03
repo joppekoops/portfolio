@@ -154,11 +154,11 @@ const subjectInput = document.getElementById('subject');
 const messageInput = document.getElementById('message');
 const submitButton = document.getElementById('send');
 const form = document.querySelector('form');
-const successMessage = document.getElementById('success-message');
+const formStatus = document.getElementById('form-status');
 const loader = document.getElementById('loader');
-const endPoint = "https://script.google.com/macros/s/AKfycbyGjP8YETphG8g85U59EoglYFAIbo7Xdvd5RDXRJFedAtJYyL3MaZE_XOpInnVxqUDYFg/exec";
+const endPoint = "https://script.google.com/macros/s/AKfycbwgf-742hkCqR6TFZWln8f0k3R8zY7HwYBaMc-Vnngm4ItTwZk77OC7H4clK-cwLLgKOg/exec";
 
-submitButton.addEventListener("click", (e) => {
+submitButton.addEventListener("click", async (e) => {
 
 	e.preventDefault();
 	let formValid = true;
@@ -207,8 +207,9 @@ submitButton.addEventListener("click", (e) => {
 
 	if(formValid) {
 
-		submitButton.style.display = "none";
+		submitButton.classList.add('hidden');
 		loader.style.display = "inline-block";
+		formStatus.className = '';
 
 		let formData = new FormData();
 
@@ -217,30 +218,48 @@ submitButton.addEventListener("click", (e) => {
 		formData.append("subject", subjectInput.value);
 		formData.append("message", messageInput.value);
 
-		fetch(endPoint, {
-			method: "POST",
-			mode: "no-cors",
-			body: formData
-		})
-		.then((response) => {
-			if (response.status == 200) {
-				form.reset();
-				form.style.marginLeft = "0";
-				successMessage.style.display = "block";
-				successMessage.innerText = "✅ Je bericht is verzonden!";
-				setTimeout(() => {successMessage.style.display = "none"}, 5000)
-				loader.style.display = "none";
-				submitButton.style.display = "inline-block";
-			} else {
-				successMessage.innerText = "❗️ Er is iets mis gegaan, je kan het opnieuw proberen.";
-				loader.style.display = "none";
-				submitButton.style.display = "inline-block";
+		try {
+			const response = await fetch(endPoint, {
+				method: "POST",
+				body: formData
+			});
+			
+			if (response.status !== 200) {
+				throw new Error('Response status for the form is not OK.');
 			}
-			return response.json();
-		})
-		.then((result) => console.log(result));
+
+			const data = await response.json();
+
+			if (data.result !== 'success') {
+				throw new Error('Something went wrong while processing the form.');
+			}
+			
+			displayFormSuccess('✅ Je bericht is verzonden!');
+		}
+
+		catch (err) {
+			displayFormError('❗️ Er is iets mis gegaan, probeer het later opnieuw.');
+			console.error(err);
+		}
 	}
 
 
 })
+
+
+const displayFormSuccess = (message) => {
+	form.reset();
+	formStatus.classList.add('success');
+	formStatus.innerText = message;
+	setTimeout(() => formStatus.className = '', 5000)
+	loader.style.display = "none";
+	submitButton.classList.remove("hidden");
+}
+
+const displayFormError = (message) => {
+	formStatus.classList.add('error');
+	formStatus.innerText = message;
+	loader.style.display = "none";
+	submitButton.classList.remove("hidden");
+}
 

@@ -648,8 +648,9 @@ label {
 	content: '';
 	display: block;
 	color: #FFA740;
-	margin: .2em 0;
-	height: 1.2em;
+	margin: .5rem;
+	height: 1em;
+	line-height: 1;
 }
 
 .input-group:has( :user-invalid):after {
@@ -708,11 +709,15 @@ form button {
 	cursor: pointer;
 	grid-column: 1;
 	align-self: flex-end;
-	margin-bottom: 1.6rem;
+	margin-bottom: 2rem;
 }
 
 form button:hover {
 	transform: scale(.9);
+}
+
+form button.hidden {
+	display: none;
 }
 
 .invalid {
@@ -725,12 +730,21 @@ form button:hover {
 	line-height: 2;
 }
 
-#success-message {
-	color: lightgreen;
+#form-status {	
 	text-align: center;
 	margin-bottom: 1em;
 	font-size: 1.4em;
 	display: none;
+}
+
+#form-status.success {
+	display: block;
+	color: lightgreen;
+}
+
+#form-status.error {
+	display: block;
+	color: red;
 }
 
 
@@ -753,7 +767,6 @@ form button:hover {
 	form {
 		grid-template-columns: max-content 1fr max-content;
 		grid-gap: 1em;
-		grid-row-gap: 2em;
 	}
 
 	label {
